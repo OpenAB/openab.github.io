@@ -1,13 +1,17 @@
 - text: "Home"
   url: "/"
+  target: 
 
 - text: "About"
   url: "/about/"
+  target: 
 
 - text: "Benchmarks"
   url: "/benchmarks/"
+  target: 
 
 - text: "Discussion"
   url: "https://groups.google.com/forum/#!forum/openab"
+  target: "_blank"
 
 

@@ -51,3 +51,22 @@ header {
 footer {
   text-align: center;
 }
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#container {
+  min-height: 100vh;
+}
+.inner main {
+  flex: 1;
+  /*display:flex;*/
+}
+
+header h1 a ,
+header h1 a:hover {
+  color: inherit;
+}

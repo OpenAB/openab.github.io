@@ -1,6 +1,9 @@
 # Name of your blog (this will show up at the top of your page and in the RSS feed)
 name: OpenAB
 
+# Subtitle in the header
+subtitle: Open Agent Benchmark
+
 # Short description (goes below the title; it will also be used in the RSS feed)
 description: The OpenAB Site
 

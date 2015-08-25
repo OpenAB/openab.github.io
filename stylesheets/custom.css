@@ -65,3 +65,8 @@ footer {
   flex: 1;
   /*display:flex;*/
 }
+
+header h1 a ,
+header h1 a:hover {
+  color: inherit;
+}

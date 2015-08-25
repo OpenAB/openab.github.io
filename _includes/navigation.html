@@ -3,7 +3,7 @@
     <ul>
         {% for link in site.data.navigation %}
             <li {% if url == link.url %}class="active"{% endif %}>
-                <a href="{{site.baseurl}}{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+                <a href="{{site.baseurl}}{{link.url}}" title="{{link.title}}" {% if link.target != null %}target="{{ link.target }}"{% endif %}>{{link.text}}</a>
             </li>
         {% endfor %}
     </ul>

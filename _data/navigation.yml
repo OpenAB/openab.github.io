@@ -1,0 +1,13 @@
+- text: "Home"
+  url: "/"
+
+- text: "About"
+  url: "/about/"
+
+- text: "Benchmarks"
+  url: "/benchmarks/"
+
+- text: "Discussion"
+  url: "https://groups.google.com/forum/#!forum/openab"
+
+

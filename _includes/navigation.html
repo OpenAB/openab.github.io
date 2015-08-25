@@ -1,0 +1,10 @@
+{% assign url = page.url|remove:'index.html' %}
+<nav id="navigation">
+    <ul>
+        {% for link in site.data.navigation %}
+            <li {% if url == link.url %}class="active"{% endif %}>
+                <a href="{{site.baseurl}}{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

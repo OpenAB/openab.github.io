@@ -1,0 +1,18 @@
+source: .
+destination: ./_site
+include: ['.htaccess']
+exclude: ['VagrantFile', 'bower.json', 'readme.md', "_source_img"]
+keep_files: ['.git']
+timezone: Europe/London
+
+host: 0.0.0.0
+port: 4000
+baseurl: 
+url: http://localhost:4000
+lsi: false
+
+name: openab.github.io
+markdown: kramdown
+highlighter: pygments
+kramdown:
+  input: GFM

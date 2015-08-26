@@ -1,49 +1,40 @@
-# Name of your blog (this will show up at the top of your page and in the RSS feed)
+# -----------------
+# Global variables
+# -----------------
+# Name of the project
 name: OpenAB
 
-# Subtitle in the header
+# Subtitle - shown in the header of the website
 subtitle: Open Agent Benchmark
 
-# Short description (goes below the title; it will also be used in the RSS feed)
-description: The OpenAB Site
-
-# Your name, as you want it to appear underneath each post and in the footer
-author: Your Name
-
-# Your email if you want it to be linked on the contact page
-author_email: p.richmond@sheffield.ac.uk
+# Meta description (<=160 characters) - used by search engines
+description: The Open Agent Benchmark is ... (@todo)
 
 
-# The URL of your actual domain. This will be used to make absolute links in the RSS feed.
-#url: http://yourdomain.com/
+# -----------------
+# Jekyll settings
+# -----------------
 
-#### Under the Hood Stuff #####
-
-# Use rdiscount as the markdown engine because it generates html5 compliant code for stuff like footnotes
-# If you use maroku (default engine) some of your generated pages may not validate or lint as html5
-# If you don't have it install it via gem install rdiscount
-markdown: rdiscount
+# Exclude files or directories from being hosted on the web
+exclude: ['package.json', 'readme.md']
 
 # Makes pretty (descriptive) permalinks. See Jekyll docs for alternatives.
 permalink: pretty
 
-# How many articles do you wish to appear on the front page:
-# paginate: 3
-
-# Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: ['package.json', 'readme.md']
-
-source: .
-destination: ./_site
+# Timezone for date/time used on the website
 timezone: Europe/London
 
+# Local development configuration settings
+source: .
+destination: ./_site
 host: 0.0.0.0
 port: 4000
 baseurl: 
 url: http://localhost:4000
 lsi: false
-highlighter: pygments
 
-# markdown: kramdown
-# kramdown:
-#   input: GFM
+# Markdown processing settings
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: pygments

@@ -1,5 +1,7 @@
 {% assign url = page.url|remove:'index.html' %}
 <nav id="navigation">
+    <label for="show-menu" class="show-menu">Menu</label>
+    <input type="checkbox" id="show-menu" name="show-menu" role="button">
     <ul>
         {% for link in site.data.navigation %}
             <li {% if url == link.url %}class="active"{% endif %}>

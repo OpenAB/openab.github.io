@@ -1,3 +1,8 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 h1 {
   margin-bottom: 12px;
@@ -15,7 +20,7 @@ header {
 #navigation ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -48,6 +53,23 @@ header {
   border-bottom-color: #c5000c;
 }
 
+#navigation .show-menu {
+  text-decoration: none;
+  color: #fff;
+  background: #c5000c;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
+  cursor: pointer;
+}
+#navigation input[type=checkbox]{
+  display: none;
+}
+/*Show menu when invisible checkbox is checked*/
+#navigation input[type=checkbox]:checked ~ ul {
+  display: flex;
+}
+
 footer {
   text-align: center;
 }
@@ -69,4 +91,23 @@ footer {
 header h1 a ,
 header h1 a:hover {
   color: inherit;
+}
+
+@media (max-width: 540px) {
+  #navigation .show-menu {
+    display:block;
+  }
+  #navigation ul {
+    display: none;
+  }
+  #navigation ul > li {
+    display: block;
+  }
+  #navigationn ul > li > a {
+    width: auto;
+  }
+  /*Show menu when invisible checkbox is checked*/
+  #navigation input[type=checkbox]:checked ~ ul {
+    display: block;
+  }
 }

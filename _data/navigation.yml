@@ -7,11 +7,27 @@
   url: "/about/"
   target: 
   subnav:
+    - text: "Purpose"
+      url: "/membership/purpose/"
+      target: 
+    - text: "FAQ"
+      url: "/membership/faq/"
+      target: 
 
 - text: "Benchmarks"
   url: "/benchmarks/"
   target: 
   subnav:
+    - text: "Models"
+      url: "/benchmarks/models/"
+      target: 
+    - text: "Simulators"
+      url: "/benchmarks/simulators/"
+      target: 
+    - text: "Submission"
+      url: "/benchmarks/submission/"
+      target: 
+
 
 - text: "Membership"
   url: "/membership/"
@@ -20,8 +36,11 @@
     - text: "Governance"
       url: "/membership/governance/"
       target: 
-    - text: "Open membership model"
-      url: "/membership/open-membership-model/"
+    - text: "Bylaws"
+      url: "/membership/byelaws/"
+      target: 
+    - text: "Open Membership"
+      url: "/membership/membership/"
       target: 
 
 - text: "Discussion"

@@ -17,7 +17,7 @@ header {
   width: 100%;
   padding-bottom: 16px;
 }
-#navigation ul {
+#navigation > ul {
   list-style: none;
   display: flex;
   /*flex-wrap: wrap;*/
@@ -26,31 +26,65 @@ header {
   width: 100%;
   padding: 0px;
 }
-#navigation ul > li {
+#navigation > ul > li {
   display: flex;
   position: relative;
   padding: 0;
   width: 100%;
   flex: 1;
+  margin-bottom: 4px;
 }
-#navigation ul > li > a {
+#navigation > ul > li > a {
   display: block;
   text-align: center;
-  margin-bottom: 4px;
   padding: 8px 0px;
   background: transparent;
   color: #333;
   border-bottom: 4px solid #000;
   width: 100%;
 }
-#navigation ul > li > a:focus ,
-#navigation ul > li > a:hover {
+#navigation > ul > li > a:focus ,
+#navigation > ul > li > a:hover {
   border-bottom-color: #A2000A;
 }
-#navigation ul > li.active > a ,
-#navigation ul > li.active > a:focus ,
-#navigation ul > li.active > a:hover {
+#navigation > ul > li.active > a ,
+#navigation > ul > li.active > a:focus ,
+#navigation > ul > li.active > a:hover {
   border-bottom-color: #c5000c;
+}
+
+#navigation > ul > li > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display:none;
+}
+#navigation > ul > li > ul > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#navigation > ul > li > ul > li > a {
+  display: block;
+  text-align: center;
+  color: #333;
+  border-bottom: 4px solid #000;
+  border-left: 4px solid #000;
+  border-right: 4px solid #000;
+  padding: 4px 0px;
+}
+#navigation > ul > li > ul > li > a:focus ,
+#navigation > ul > li > ul > li > a:hover {
+  /*color: #A2000A;*/
+  border-bottom-color: #c5000c;
+}
+
+#navigation > ul > li:hover > ul {
+  display: block;
 }
 
 #navigation .show-menu {
@@ -99,15 +133,26 @@ header h1 a:hover {
   #navigation .show-menu {
     display:block;
   }
-  #navigation ul {
+  #navigation > ul {
     display: none;
   }
-  #navigation ul > li {
+  #navigation > ul > li {
     display: block;
   }
   #navigationn ul > li > a {
     width: auto;
   }
+
+  /*Temp fix for hover based navigation on mobile - pretend it doesn't exist*/
+  #navigation > ul > li:hover > ul {
+    display: none;
+  }
+  /*Unless we are on it's parent*/
+  #navigation > ul > li.active > ul {
+    display: block;
+    position: relative;
+  }
+
   /*Show menu when invisible checkbox is checked*/
   #navigation input[type=checkbox]:checked ~ ul {
     display: block;

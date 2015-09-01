@@ -1,16 +1,23 @@
 {% assign url = page.url|remove:'index.html' %}
 <nav id="navigation">
-    <label for="show-menu" class="show-menu">Menu</label>
-    <input type="checkbox" id="show-menu" name="show-menu" role="button">
     <ul>
         {% for link in site.data.navigation %}
-            <li {% if url == link.url %}class="active"{% endif %}>
-                <a href="{{site.baseurl}}{{link.url}}" title="{{link.title}}" {% if link.target != null %}target="{{ link.target }}"{% endif %}>{{link.text}}</a>
-                {% if link.subnav %}
+            <li class="{% if url == link.url %}active{% endif %} {% if link.subnav.size > 0 %}has-sub{% endif %}">
+                <a href="{{site.baseurl}}{{link.url}}" title="{{link.title}}" {% if link.target != null %}target="{{link.target}}"{% endif %}>{{link.text}}</a>
+                {% if link.subnav.size > 0 %}
                     <ul>
                         {% for sublink in link.subnav %}
-                            <li {% if url == link.url %}class="active"{% endif %}>
-                                <a href="{{site.baseurl}}{{sublink.url}}" title="{{sublink.title}}" {% if sublink.target != null %}target="{{ sublink.target }}"{% endif %}>{{sublink.text}}</a>
+                            <li class="{% if url == link.url %}active{% endif %} {% if sublink.subnav.size > 0 %}has-sub{% endif %}">
+                                <a href="{{site.baseurl}}{{sublink.url}}" title="{{sublink.title}}" {% if sublink.target != null %}target="{{sublink.target}}"{% endif %}>{{sublink.text}}</a>
+                                {% if sublink.subnav.size > 0 %}
+                                <ul>
+                                    {% for subsublink in sublink.subnav %}
+                                        <li class="{% if url == link.url %}active{% endif %}">
+                                            <a href="{{site.baseurl}}{{subsublink.url}}" title="{{subsublink.title}}" {% if subsublink.target != null %}target="{{subsublink.target}}"{% endif %}>{{subsublink.text}}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                             </li>
                         {% endfor %}
                     </ul>

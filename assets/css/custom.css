@@ -12,98 +12,6 @@ header {
   padding-bottom: 5px;
 }
 
-#navigation {
-  margin: 8px auto 4px auto;
-  width: 100%;
-  padding-bottom: 16px;
-}
-#navigation > ul {
-  list-style: none;
-  display: flex;
-  /*flex-wrap: wrap;*/
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0px;
-}
-#navigation > ul > li {
-  display: flex;
-  position: relative;
-  padding: 0;
-  width: 100%;
-  flex: 1;
-  margin-bottom: 4px;
-}
-#navigation > ul > li > a {
-  display: block;
-  text-align: center;
-  padding: 8px 0px;
-  background: transparent;
-  color: #333;
-  border-bottom: 4px solid #000;
-  width: 100%;
-}
-#navigation > ul > li > a:focus ,
-#navigation > ul > li > a:hover {
-  border-bottom-color: #A2000A;
-}
-#navigation > ul > li.active > a ,
-#navigation > ul > li.active > a:focus ,
-#navigation > ul > li.active > a:hover {
-  border-bottom-color: #c5000c;
-}
-
-#navigation > ul > li > ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display:none;
-}
-#navigation > ul > li > ul > li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#navigation > ul > li > ul > li > a {
-  display: block;
-  text-align: center;
-  color: #333;
-  border-bottom: 4px solid #000;
-  border-left: 4px solid #000;
-  border-right: 4px solid #000;
-  padding: 4px 0px;
-}
-#navigation > ul > li > ul > li > a:focus ,
-#navigation > ul > li > ul > li > a:hover {
-  /*color: #A2000A;*/
-  border-bottom-color: #c5000c;
-}
-
-#navigation > ul > li:hover > ul {
-  display: block;
-}
-
-#navigation .show-menu {
-  text-decoration: none;
-  color: #fff;
-  background: #c5000c;
-  text-align: center;
-  padding: 10px 0;
-  display: none;
-  cursor: pointer;
-}
-#navigation input[type=checkbox]{
-  display: none;
-}
-/*Show menu when invisible checkbox is checked*/
-#navigation input[type=checkbox]:checked ~ ul {
-  display: flex;
-}
-
 footer {
   text-align: center;
 }
@@ -119,9 +27,9 @@ footer {
 #container {
   min-height: 100vh;
 }
+
 .inner main {
   flex: 1;
-  /*display:flex;*/
 }
 
 header h1 a ,
@@ -129,32 +37,321 @@ header h1 a:hover {
   color: inherit;
 }
 
-@media (max-width: 620px) {
-  #navigation .show-menu {
-    display:block;
-  }
-  #navigation > ul {
-    display: none;
-  }
-  #navigation > ul > li {
-    display: block;
-  }
-  #navigationn ul > li > a {
-    width: auto;
-  }
 
-  /*Temp fix for hover based navigation on mobile - pretend it doesn't exist*/
-  #navigation > ul > li:hover > ul {
+
+/* ----------------
+CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
+---------------- */
+#navigation,
+#navigation ul,
+#navigation ul li,
+#navigation ul li a,
+#navigation #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#navigation:after,
+#navigation > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#navigation #menu-button {
+  display: none;
+}
+#navigation {
+  width: auto;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  line-height: 1;
+  background: #f5f5f5;
+  margin-bottom: 8px;
+}
+#menu-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #009ae1;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -ms-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+#navigation > ul > li {
+  float: left;
+}
+#navigation.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#navigation.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#navigation.align-center ul ul {
+  text-align: left;
+}
+#navigation.align-right > ul > li {
+  float: right;
+}
+#navigation.align-right ul ul {
+  text-align: right;
+}
+#navigation > ul > li > a {
+  padding: 20px;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#navigation > ul > li:hover > a,
+#navigation > ul > li.active > a {
+  color: #009ae1;
+}
+#navigation > ul > li.has-sub > a {
+  padding-right: 25px;
+}
+#navigation > ul > li.has-sub > a::after {
+  position: absolute;
+  top: 21px;
+  right: 10px;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: border-color 0.2s ease;
+  -moz-transition: border-color 0.2s ease;
+  -ms-transition: border-color 0.2s ease;
+  -o-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+#navigation > ul > li.has-sub:hover > a::after {
+  border-color: #009ae1;
+}
+#navigation ul ul {
+  position: absolute;
+  left: -9999px;
+}
+#navigation li:hover > ul {
+  left: auto;
+}
+#navigation.align-right li:hover > ul {
+  right: 0;
+}
+#navigation ul ul ul {
+  margin-left: 100%;
+  top: 0;
+}
+#navigation.align-right ul ul ul {
+  margin-left: 0;
+  margin-right: 100%;
+}
+#navigation ul ul li {
+  height: 0;
+  -webkit-transition: height .2s ease;
+  -moz-transition: height .2s ease;
+  -ms-transition: height .2s ease;
+  -o-transition: height .2s ease;
+  transition: height .2s ease;
+}
+#navigation ul li:hover > ul > li {
+  height: 32px;
+}
+#navigation ul ul li a {
+  padding: 10px 20px;
+  width: 160px;
+  font-size: 12px;
+  background: #333333;
+  text-decoration: none;
+  color: #dddddd;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+#navigation ul ul li:hover > a,
+#navigation ul ul li a:hover {
+  color: #ffffff;
+}
+#navigation ul ul li.has-sub > a::after {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 4px;
+  height: 4px;
+  border-bottom: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  content: "";
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transition: border-color 0.2s ease;
+  -moz-transition: border-color 0.2s ease;
+  -ms-transition: border-color 0.2s ease;
+  -o-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+#navigation.align-right ul ul li.has-sub > a::after {
+  right: auto;
+  left: 10px;
+  border-bottom: 0;
+  border-right: 0;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+#navigation ul ul li.has-sub:hover > a::after {
+  border-color: #ffffff;
+}
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  #navigation {
+    width: 100%;
+  }
+  #navigation ul {
+    width: 100%;
     display: none;
   }
-  /*Unless we are on it's parent*/
-  #navigation > ul > li.active > ul {
+  #navigation.align-center > ul,
+  #navigation.align-right ul ul {
+    text-align: left;
+  }
+  #navigation ul li,
+  #navigation ul ul li,
+  #navigation ul li:hover > ul > li {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgba(120, 120, 120, 0.15);
+  }
+  #navigation ul li a,
+  #navigation ul ul li a {
+    width: 100%;
+  }
+  #navigation > ul > li,
+  #navigation.align-center > ul > li,
+  #navigation.align-right > ul > li {
+    float: none;
     display: block;
+  }
+  #navigation ul ul li a {
+    padding: 20px 20px 20px 30px;
+    font-size: 12px;
+    color: #000000;
+    background: none;
+  }
+  #navigation ul ul li:hover > a,
+  #navigation ul ul li a:hover {
+    color: #000000;
+  }
+  #navigation ul ul ul li a {
+    padding-left: 40px;
+  }
+  #navigation ul ul,
+  #navigation ul ul ul {
     position: relative;
+    left: 0;
+    right: auto;
+    width: 100%;
+    margin: 0;
   }
-
-  /*Show menu when invisible checkbox is checked*/
-  #navigation input[type=checkbox]:checked ~ ul {
+  #navigation > ul > li.has-sub > a::after,
+  #navigation ul ul li.has-sub > a::after {
+    display: none;
+  }
+  #menu-line {
+    display: none;
+  }
+  #navigation #menu-button {
     display: block;
+    padding: 20px;
+    color: #000000;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  #navigation #menu-button::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 15px;
+    height: 2px;
+    background: #000000;
+  }
+  #navigation #menu-button::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    display: block;
+    width: 15px;
+    height: 3px;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+  }
+  #navigation .submenu-button {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    display: block;
+    border-left: 1px solid rgba(120, 120, 120, 0.15);
+    height: 52px;
+    width: 52px;
+    cursor: pointer;
+  }
+  #navigation .submenu-button::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 26px;
+    display: block;
+    width: 1px;
+    height: 11px;
+    background: #000000;
+    z-index: 99;
+  }
+  #navigation .submenu-button::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 26px;
+    display: block;
+    width: 11px;
+    height: 1px;
+    background: #000000;
+    z-index: 99;
+  }
+  #navigation .submenu-button.submenu-opened:after {
+    display: none;
   }
 }
+/* ----------------
+End of cssmenumaker
+---------------- */

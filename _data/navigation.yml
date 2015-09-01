@@ -9,9 +9,16 @@
 - text: "Benchmarks"
   url: "/benchmarks/"
   target: 
+  
+  - text: "Membership"
+  url: "/membership/"
+  target: 
 
 - text: "Discussion"
   url: "https://groups.google.com/forum/#!forum/openab"
   target: "_blank"
 
+  - text: "Contact"
+  url: "/contact/""
+  target:
 

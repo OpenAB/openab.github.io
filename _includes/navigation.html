@@ -6,6 +6,15 @@
         {% for link in site.data.navigation %}
             <li {% if url == link.url %}class="active"{% endif %}>
                 <a href="{{site.baseurl}}{{link.url}}" title="{{link.title}}" {% if link.target != null %}target="{{ link.target }}"{% endif %}>{{link.text}}</a>
+                {% if link.subnav %}
+                    <ul>
+                        {% for sublink in link.subnav %}
+                            <li {% if url == link.url %}class="active"{% endif %}>
+                                <a href="{{site.baseurl}}{{sublink.url}}" title="{{sublink.title}}" {% if sublink.target != null %}target="{{ sublink.target }}"{% endif %}>{{sublink.text}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

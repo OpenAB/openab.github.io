@@ -1,23 +1,35 @@
 - text: "Home"
   url: "/"
   target: 
+  subnav:
 
 - text: "About"
   url: "/about/"
   target: 
+  subnav:
 
 - text: "Benchmarks"
   url: "/benchmarks/"
   target: 
-  
+  subnav:
+
 - text: "Membership"
   url: "/membership/"
   target: 
+  subnav:
+    - text: "Governance"
+      url: "/membership/governance/"
+      target: 
+    - text: "Open membership model"
+      url: "/membership/open-membership-model/"
+      target: 
 
 - text: "Discussion"
   url: "https://groups.google.com/forum/#!forum/openab"
   target: "_blank"
+  subnav:
 
 - text: "Contact"
   url: "/contact/"
   target:
+  subnav:

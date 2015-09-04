@@ -75,7 +75,6 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   /*font-family: 'Open Sans', sans-serif;*/
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   line-height: 1;
-  background: #f5f5f5;
   margin-bottom: 8px;
 }
 #menu-line {
@@ -83,7 +82,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   top: 0;
   left: 0;
   height: 3px;
-  background: #009ae1;
+  background: #0c2b84;
   -webkit-transition: all 0.25s ease-out;
   -moz-transition: all 0.25s ease-out;
   -ms-transition: all 0.25s ease-out;
@@ -92,6 +91,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
 }
 #navigation > ul > li {
   float: left;
+  width: 16.6%;
 }
 #navigation.align-center > ul {
   font-size: 0;
@@ -114,6 +114,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   padding: 20px;
   font-size: 12px;
   text-decoration: none;
+  text-align: center;
   text-transform: uppercase;
   color: #000000;
   -webkit-transition: color .2s ease;
@@ -124,15 +125,14 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
 }
 #navigation > ul > li:hover > a,
 #navigation > ul > li.active > a {
-  color: #009ae1;
+  color: #0c2b84;
 }
 #navigation > ul > li.has-sub > a {
   padding-right: 25px;
 }
 #navigation > ul > li.has-sub > a::after {
-  position: absolute;
-  top: 21px;
-  right: 10px;
+  position: fixed;
+  margin-left: 10px;
   width: 4px;
   height: 4px;
   border-bottom: 1px solid #000000;
@@ -150,7 +150,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   transition: border-color 0.2s ease;
 }
 #navigation > ul > li.has-sub:hover > a::after {
-  border-color: #009ae1;
+  border-color: #0c2b84;
 }
 #navigation ul ul {
   position: absolute;
@@ -185,6 +185,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   padding: 10px 20px;
   width: 160px;
   font-size: 12px;
+  text-transform: uppercase;
   background: #333333;
   text-decoration: none;
   color: #dddddd;

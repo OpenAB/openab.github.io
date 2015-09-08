@@ -76,6 +76,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   line-height: 1;
   margin-bottom: 8px;
+  text-shadow: none;
 }
 #menu-line {
   position: absolute;
@@ -182,13 +183,13 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   height: 32px;
 }
 #navigation ul ul li a {
-  padding: 10px 20px;
+  padding: 20px;
   width: 160px;
   font-size: 12px;
   text-transform: uppercase;
-  background: #333333;
+  background: #cccccc;
   text-decoration: none;
-  color: #dddddd;
+  color: #000000;
   -webkit-transition: color .2s ease;
   -moz-transition: color .2s ease;
   -ms-transition: color .2s ease;

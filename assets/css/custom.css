@@ -19,7 +19,7 @@ footer {
 .inner {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   max-width: 800px;
   width: 90%;
 }
@@ -28,8 +28,14 @@ footer {
   min-height: 100vh;
 }
 
-.inner main {
-  flex: 1;
+.inner > main {
+  flex: 1 0 auto;
+}
+
+.inner > header ,
+.inner > nav ,
+.inner > footer {
+  flex-shrink: 0;
 }
 
 header h1 a ,

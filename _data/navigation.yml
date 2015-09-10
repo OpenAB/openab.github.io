@@ -6,13 +6,9 @@
 - text: "About"
   url: "/about/"
   target: 
-  subnav:
-    - text: "Purpose"
-      url: "/membership/purpose/"
-      target: 
-      subnav: 
+  subnav: 
     - text: "FAQ"
-      url: "/membership/faq/"
+      url: "/about/faq/"
       target: 
       subnav: 
 
@@ -42,17 +38,13 @@
       target: 
       subnav: 
     - text: "Bylaws"
-      url: "/membership/byelaws/"
+      url: "/membership/bylaws/"
       target: 
-      subnav: 
-    - text: "Open Membership"
-      url: "/membership/membership/"
-      target: 
-      subnav: 
+      subnav:
 
 - text: "Discussion"
-  url: "https://groups.google.com/forum/#!forum/openab"
-  target: "_blank"
+  url: "/discussion/"
+  target:
   subnav:
 
 - text: "Contact"

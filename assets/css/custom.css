@@ -138,7 +138,7 @@ CSS from http://cssmenumaker.com/menu/flat-jquery-responsive-menu
   padding-right: 25px;
 }
 #navigation > ul > li.has-sub > a::after {
-  position: fixed;
+  position: absolute;
   margin-left: 10px;
   width: 4px;
   height: 4px;

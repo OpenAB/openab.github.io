@@ -24,8 +24,8 @@
       url: "/benchmarks/simulators/"
       target: 
       subnav: 
-    - text: "Submission"
-      url: "/benchmarks/submission/"
+    - text: "Papers"
+      url: "/benchmarks/papers/"
       target: 
       subnav: 
 

@@ -389,7 +389,7 @@ Tables
 	border-top-left-radius:16px;
 	text-shadow: none;
 }
-.decoratedtable table{
+.decoratedtable {
     border-collapse: collapse;
         border-spacing: 0;
 	width:100%;
@@ -401,12 +401,12 @@ Tables
 	-webkit-border-bottom-right-radius:16px;
 	border-bottom-right-radius:16px;
 }
-.decoratedtable table tr:first-child td:first-child {
+.decoratedtable tr:first-child td:first-child {
   -moz-border-radius-topleft:16px;
   -webkit-border-top-left-radius:16px;
   border-top-left-radius:16px;
 }
-.decoratedtable table tr:first-child td:last-child {
+.decoratedtable tr:first-child td:last-child {
 	-moz-border-radius-topright:16px;
 	-webkit-border-top-right-radius:16px;
 	border-top-right-radius:16px;

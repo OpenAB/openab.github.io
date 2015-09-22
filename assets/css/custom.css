@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+ol ,
+ul {
+  padding-left: 36px;
+}
+
 h1 {
   margin-bottom: 12px;
 }

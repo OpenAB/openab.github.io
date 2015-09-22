@@ -7,9 +7,9 @@ layout: default
 
 The goals of the OpenAB Committee are to:
 
-a. _Promote the use and further expansion of the OpenAB benchmarks and benchmarking best practices._
-b. _Maintain and update the OpenAB website and facilitate discussion around best practices._
-c. _Oversee and organise peer review of benchmark models to ensure that they are of high quality._
+1. _Promote the use and further expansion of the OpenAB benchmarks and benchmarking best practices._
+2. _Maintain and update the OpenAB website and facilitate discussion around best practices._
+3. _Oversee and organise peer review of benchmark models to ensure that they are of high quality._
 
 The committee has active and corresponding members. Active members can vote and are expected to work towards achieving the goals of the committee. Active members are responsible for the peer reviewing of models reporting to the chair or co-chairs.
 

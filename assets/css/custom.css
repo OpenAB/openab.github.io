@@ -480,3 +480,7 @@ Tables
 	border-width:0px 0px 1px 1px;
 }
 
+/* Switch bylaws ol to use lower alphabetical characters rather than numeric */
+#bylaws ~ ol li {
+  list-style-type: lower-alpha;
+}

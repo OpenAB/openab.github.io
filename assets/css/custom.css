@@ -484,3 +484,54 @@ Tables
 #bylaws ~ ol li {
   list-style-type: lower-alpha;
 }
+
+
+/* Paper list styling */
+
+ul.list-of-papers {
+  padding-left: 0px;
+}
+ul.list-of-papers li {
+  list-style: none;
+  padding: 16px 0px;
+  margin: 16px 16px;
+  border-top: 1px solid #bbb;
+}
+ul.list-of-papers li:first-child{
+  border-top: 0;
+}
+ul.list-of-papers li h3 {
+  font-size: 22px;
+  margin-bottom: 2px;
+  color: #303030;
+}
+ul.list-of-papers li h4 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+ul.list-of-papers li p {
+  margin-bottom: 8px;
+}
+ul.list-of-papers li .keywords span {
+  font-weight: bold;
+}
+ul.list-of-papers li nav {
+  /*float: right;*/
+  /*clear: both;*/
+  color: #303030;
+}
+ul.list-of-papers li nav a {
+  color: #E2E2E2;
+  display: inline-block;
+  background: rgba(12, 43, 132, 0.7);;
+  border-radius: 4px;
+  border: 1px solid #0c2b84;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 16px;
+  text-shadow:none;
+}
+
+ul.list-of-papers li .abstract {
+  display: none; /* Initially hide the abstract */
+}

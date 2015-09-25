@@ -4,8 +4,9 @@
   description: "A survey of parallel and distributed multi agent simulation platforms. Usful for comparisons between simulators with some limited benchmarking."
   abstract: "Simulation has become an indispensable tool for researchers to explore systems without having recourse to real experiments. Depending on the characteristics of the modeled system, methods used to represent the system may vary. Multi-agent systems are, thus, often used to model and simulate complex systems. Whatever modeling type used, increasing the size and the precision of the model increases the amount of computation, requiring the use of parallel systems when it becomes too large. In this paper, we focus on parallel platforms that support multiagent simulations. Our contribution is a survey on existing platforms and their evaluation in the context of high performance computing. We present a qualitative analysis, mainly based on platform properties, then a performance comparison using the same agent model implemented on each platform."
   url: "http://link.springer.com/chapter/10.1007%2F978-3-319-14325-5_32#page-1" 
-  keywords: "review, survay, parallel, distributed"
-  
+  keywords: "review, survey, parallel, distributed"
+  bib:
+
 - title: "STAMP: Stanford Transactional Applications for Multi-Processing"
   author-list: "C Minh, J Chung, C Kozyrakis, K Olukotun"
   publication: "In Workload Characterization, 2008. IISWC 2008. IEEE International Symposium on (pp. 35-46). IEEE."
@@ -13,7 +14,8 @@
   abstract: "Transactional Memory (TM) is emerging as a promising technology to simplify parallel programming. While several TM systems have been proposed in the research literature, we are still missing the tools and workloads necessary to analyze and compare the proposals. Most TM systems have been evaluated using microbenchmarks, which may not be representative of any real-world behavior, or individual applications, which do not stress a wide range of execution scenarios. We introduce the Stanford Transactional Application for Multi-Processing (STAMP), a comprehensive benchmark suite for evaluating TM systems. STAMP includes eight applications and thirty variants of input parameters and data sets in order to represent several application domains and cover a wide range of transactional execution cases (frequent or rare use of transactions, large or small transactions, high or low contention, etc.). Moreover, STAMP is portable across many types of TM systems, including hardware, software, and hybrid systems. In this paper, we provide descriptions and a detailed characterization of the applications in STAMP. We also use the suite to evaluate six different TM systems, identify their shortcomings, and motivate further research on their performance characteristics."
   url: "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4636089" 
   keywords: "benchmarking, multi-processing"
-  
+  bib: 
+
 - title: "Examining the Expert Gap in Parallel Programming"
   author-list: "S Nanz, S West, K Silveira"
   publication: "Euro-Par 2013 Parallel Processing. Springer Berlin Heidelberg, 2013. 434-445."
@@ -21,4 +23,4 @@
   abstract: "Parallel programming is often regarded as one of the hardest programming disciplines. On the one hand, parallel programs are notoriously prone to concurrency errors; and, while trying to avoid such errors, achieving program performance becomes a significant challenge. As a result of the multicore revolution, parallel programming has however ceased to be a task for domain experts only. And for this reason, a large variety of languages and libraries have been proposed that promise to ease this task. This paper presents a study to investigate whether such approaches succeed in closing the gap between domain experts and mainstream developers. Four approaches are studied: Chapel, Cilk, Go, and Threading Building Blocks (TBB). Each approach is used to implement a suite of benchmark programs, which are then reviewed by notable experts in the language. By comparing original and revised versions with respect to source code size, coding time, execution time, and speedup, we gain insights into the importance of expert knowledge when using modern parallel programming approaches."
   url: "http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4636089" 
   keywords: "parallel, design, language"
-
+  bib: 

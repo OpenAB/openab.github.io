@@ -520,10 +520,10 @@ ul.list-of-papers li nav {
   /*clear: both;*/
   color: #303030;
 }
-ul.list-of-papers li nav a {
+ul.list-of-papers li .paper-button {
   color: #E2E2E2;
   display: inline-block;
-  background: rgba(12, 43, 132, 0.7);;
+  background: rgba(12, 43, 132, 0.7);
   border-radius: 4px;
   border: 1px solid #0c2b84;
   padding: 4px 8px;
@@ -532,6 +532,31 @@ ul.list-of-papers li nav a {
   text-shadow:none;
 }
 
+ul.list-of-papers li .paper-button:hover {
+  color: #E2E2E2;
+  background: rgba(12, 43, 132, 0.85);
+}
+
+ul.list-of-papers li .abstract-toggle {
+  display: none;
+}
+
+ul.list-of-papers li .abstract-toggle + label:after {
+    content: "+";
+    padding-left: 0.5em;
+}
+
+ul.list-of-papers li .abstract-toggle:checked + label:after {
+  content: "\2212";
+}
+
 ul.list-of-papers li .abstract {
   display: none; /* Initially hide the abstract */
+  border-left: 8px solid #D2D2D2;
+  padding-left: 8px;
+  margin-top: 8px;
+}
+
+ul.list-of-papers li .abstract-toggle:checked ~ .abstract {
+  display: block;
 }

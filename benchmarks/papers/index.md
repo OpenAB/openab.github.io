@@ -19,14 +19,16 @@ The following list of papers are user contributed resources which either give in
 		</p>
 		<p class="description">{{paper.description}}</p>
 		{% if paper.url || paper.bib %}
-		<nav>
 			{% if paper.url %}
-				<a href="{{paper.url}}">link</a>
+				<a class="paper-button" href="{{paper.url}}">link</a>
 			{% endif %}
 			{% if paper.bib %}
-				<a href="{{paper.bib}}">cite</a>
+				<a class="paper-button" href="{{paper.bib}}">cite</a>
 			{% endif %}
-		</nav>
+		{% endif %}
+		{% if paper.abstract %}
+			<input class="abstract-toggle" type="checkbox" id="abstract-toggle-{{forloop.index}}" />
+			<label class="paper-button" for="abstract-toggle-{{forloop.index}}">Abstract</label>
 		{% endif %}
 		<p class="abstract">{{paper.abstract}}</p>
 	</li>

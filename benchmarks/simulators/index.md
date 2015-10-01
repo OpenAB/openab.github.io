@@ -9,9 +9,9 @@ The following list of simulators are for the distributed and parallel simulation
 
 <table class="decoratedtable">
 	<tr>
-		<td>Simulator</td>
-		<td>Description</td>
-		<td>Website</td>
+		<th>Simulator</th>
+		<th>Description</th>
+		<th>Website</th>
 	</tr>
 	{% for sim in site.data.simulators %}
 	<tr>

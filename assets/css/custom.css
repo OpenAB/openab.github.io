@@ -401,22 +401,26 @@ Tables
 	height:100%;
 	margin:0px;padding:0px;
 }
+.decoratedtable tr:last-child th:last-child ,
 .decoratedtable tr:last-child td:last-child {
 	-moz-border-radius-bottomright:16px;
 	-webkit-border-bottom-right-radius:16px;
 	border-bottom-right-radius:16px;
 }
+.decoratedtable tr:first-child th:first-child ,
 .decoratedtable tr:first-child td:first-child {
   -moz-border-radius-topleft:16px;
   -webkit-border-top-left-radius:16px;
   border-top-left-radius:16px;
 }
+.decoratedtable tr:first-child th:last-child ,
 .decoratedtable tr:first-child td:last-child {
 	-moz-border-radius-topright:16px;
 	-webkit-border-top-right-radius:16px;
 	border-top-right-radius:16px;
 }
-.decoratedtable tr:last-child td:first-child{
+.decoratedtable tr:last-child th:first-child ,
+.decoratedtable tr:last-child td:first-child {
 	-moz-border-radius-bottomleft:16px;
 	-webkit-border-bottom-left-radius:16px;
 	border-bottom-left-radius:16px;
@@ -430,7 +434,8 @@ Tables
 .decoratedtable tr:nth-child(even){
   background-color:#cccccc; 
 }
-.decoratedtable td{
+.decoratedtable th ,
+.decoratedtable td {
 	vertical-align:middle;
 	border:1px solid #ffffff;
 	border-width:0px 1px 1px 0px;
@@ -441,16 +446,20 @@ Tables
 	font-weight:normal;
 	color:#000000;
 }
-.decoratedtable tr:last-child td{
+.decoratedtable tr:last-child th ,
+.decoratedtable tr:last-child td {
 	border-width:0px 1px 0px 0px;
 }
-.decoratedtable tr td:last-child{
+.decoratedtable tr th:last-child ,
+.decoratedtable tr td:last-child {
 	border-width:0px 0px 1px 0px;
 }
-.decoratedtable tr:last-child td:last-child{
+.decoratedtable tr:last-child th:last-child ,
+.decoratedtable tr:last-child td:last-child {
 	border-width:0px 0px 0px 0px;
 }
-.decoratedtable tr:first-child td{
+.decoratedtable tr:first-child th ,
+.decoratedtable tr:first-child td {
 	background:-o-linear-gradient(bottom, #003366 5%, #003f7f 100%);
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #003366), color-stop(1, #003f7f) );
 	background:-moz-linear-gradient( center top, #003366 5%, #003f7f 100% );
@@ -466,17 +475,20 @@ Tables
 	font-weight:bold;
 	color:#ffffff;
 }
-.decoratedtable tr:first-child:hover td{
+.decoratedtable tr:first-child:hover th ,
+.decoratedtable tr:first-child:hover td {
 	background:-o-linear-gradient(bottom, #003366 5%, #003f7f 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #003366), color-stop(1, #003f7f) );
 	background:-moz-linear-gradient( center top, #003366 5%, #003f7f 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#003366", endColorstr="#003f7f");	background: -o-linear-gradient(top,#003366,003f7f);
 
 	background-color:#003366;
 }
-.decoratedtable tr:first-child td:first-child{
+.decoratedtable tr:first-child th:first-child ,
+.decoratedtable tr:first-child td:first-child {
 	border-width:0px 0px 1px 0px;
 }
-.decoratedtable tr:first-child td:last-child{
+.decoratedtable tr:first-child th:last-child ,
+.decoratedtable tr:first-child td:last-child {
 	border-width:0px 0px 1px 1px;
 }
 

@@ -8,9 +8,9 @@ layout: default
 {% if site.data.accepted.size > 0%}
 <table class="decoratedtable">
 	<tr>
-		<td>Name</td>
-		<td>Description</td>
-		<td>Link</td>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Link</th>
 	</tr>
 	{% for model in site.data.accepted %}
 	<tr>
@@ -36,7 +36,7 @@ There are currently no accepted benchmark models
 	<tr>
 		<td>{{model.name}}</td>
 		<td>{{model.description}}</td>
-		<td>{{model.url}}</td>
+		<td><a href="{{model.url}}">{{model.url}}</td>
 	</tr>
 	{% endfor %}
 </table>

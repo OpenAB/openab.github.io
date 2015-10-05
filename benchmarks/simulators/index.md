@@ -15,7 +15,9 @@ The following list of simulators are for the distributed and parallel simulation
 	</tr>
 	{% for sim in site.data.simulators %}
 	<tr>
-		<td>{{sim.name}}</td>
+		<td>{{sim.name}} </br>
+		<img src='{{sim.img}}' alt='{{sim.name}}' width='30px'>
+		</td>
 		<td>{{sim.description}}</td>
 		<td><a href="http://{{sim.url}}">{{sim.url}}</td>
 	</tr>

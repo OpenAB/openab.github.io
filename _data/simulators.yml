@@ -13,4 +13,4 @@
 - name: "FLAME HPC"
   description: "FLAME is a generic agent-based modelling system which can be used to development applications in many areas. It generates a complete agent-based application which can be compiled and built on the majority of computing systems ranging from laptops to HPC super computers."
   url: "www.flame.ac.uk" 
-  img: "http://www.openab.org/assets/images/flame.png" 
+  img: "http://www.openab.org/assets/images/FLAME.png" 

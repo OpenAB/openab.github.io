@@ -5,7 +5,7 @@ layout: default
 
 # Simulators
 
-The following list of simulators are for the distributed and parallel simulation of multi agent systems models. They are the current reference simulators required for the [submission processes](../submission/) of benchmark models. If you would link to submit your simulator to this list of reference simulators then please [contact us](../../contact/).
+The following list of simulators are suitable for the distributed and parallel simulation of multi agent systems models. They are the current recommended reference simulators required for the [submission processes](../submission/) of benchmark models. If you would link to submit your simulator to this list of reference simulators then please [contact us](../../contact/).
 
 <table class="decoratedtable">
 	<tr>

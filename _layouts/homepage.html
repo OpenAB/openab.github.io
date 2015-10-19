@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+  {% include head.html %}
+  <body>
+    <div id="container" class="layout-homepage">
+      <div class="inner">
+        {% include header.html %}
+        {% include navigation.html %}
+        <main>
+          <div class="column">
+            {{ content }}
+          </div>
+          {% if site.posts.size > 0 %}
+            <div class="column post-nav-container">
+              <h3>Latest News</h3>
+              <nav class="post-nav">
+                <ul>
+                  {% for post in site.posts %}
+                    <li class="{% if url == post.url %}active{% endif %}">    
+                        <a href="{{post.url}}" title="{{post.title}}">
+                          <span>{{post.title}}</span>
+                          {{post.date | date: '%d %B %Y'}}
+                        </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </nav>
+            </div>
+          {% endif %}
+        </main>
+        {% include footer.html %}
+      </div>
+    </div>
+  </body>
+</html>

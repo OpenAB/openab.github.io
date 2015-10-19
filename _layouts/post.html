@@ -5,12 +5,27 @@
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
   {% include head.html %}
   <body>
-    <div id="container">
+    <div id="container" class="layout-post">
       <div class="inner">
         {% include header.html %}
         {% include navigation.html %}
         <main>
           {{ content }}
+          <nav class="prev-next">
+            {% if page.previous %}
+                <a href="{{site.baseurl}}{{page.previous.url}}">
+                  <i class="fa fa-chevron-left"></i> Previous
+                </a>
+            {% endif %}
+            <a href="{{site.baseurl}}/archive/">
+                Archive
+            </a>
+            {% if page.next %}
+                <a href="{{site.baseurl}}{{page.next.url}}">
+                    Next <i class="fa fa-chevron-right"></i>
+                </a>
+            {% endif %}
+          </nav>
         </main>
         {% include footer.html %}
       </div>

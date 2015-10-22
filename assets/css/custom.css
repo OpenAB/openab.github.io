@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #0c2b84;
+}
+a:hover {
+  color: #0633B5;
+}
+
+h3 {
+  color: #6d6d6d;
+}
+
 ol ,
 ul {
   padding-left: 36px;
@@ -571,4 +582,110 @@ ul.list-of-papers li .abstract {
 
 ul.list-of-papers li .abstract-toggle:checked ~ .abstract {
   display: block;
+}
+
+/* Homepage 2 column flexbox based layout and styling */
+.layout-homepage .inner > main {
+  display: flex;
+}
+
+.layout-homepage .inner > main .column {
+  flex: 1 1 0;
+}
+
+.layout-homepage .inner > main .column:first-child {
+  flex: 2 2 0;
+}
+
+.post-nav-container {
+  margin: 0px 0px 0px 12px ;
+  background: #f5f5f5;
+  background: rgba(245, 245, 245, 0.5);
+  border: 1px solid #dedede;
+  border-radius: 4px;
+}
+
+.post-nav-container h3 {
+  padding: 10px 16px;
+  margin: 0;
+  border-bottom: 1px solid #b5b5b5;
+}
+
+.post-nav {
+}
+
+.post-nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+.post-nav ul li {
+  list-style: none;
+  padding-left: 0;
+  border-top: 1px solid #dedede;
+  padding: 12px 16px;
+}
+
+.post-nav ul li:first-child {
+  border-top: 0;
+}
+
+.post-nav ul li a {
+  font-size: 14px;
+}
+.post-nav ul li a span {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+}
+.post-nav-container p {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+.post-nav-container p:last-child {
+  margin-bottom: 0px;
+}
+
+.prev-next {
+  margin-top: 32px;
+  font-size: 0.9em;
+}
+.prev-next > a {
+  display: inline-block;
+  padding: 2px 4px;
+  background: #f5f5f5;
+  background: rgba(245, 245, 245, 0.5);
+  margin-left: -4px;
+  border: 1px solid #0c2b84;
+  border-left-width: 0;
+  text-shadow: none;
+  font-size: 16px;
+}
+.prev-next > a:focus ,
+.prev-next > a:hover {
+  background: #fff;
+}
+.prev-next > a:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: 0;
+  border-left-width: 1px;
+}
+.prev-next > a:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.prev-next .fa {
+  font-size: 90%;
+}
+
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+  .layout-homepage .inner > main  {
+    /*On smaller screens stop being flex for homepage columns*/
+    display: block;
+  }
+
+  .post-nav-container {
+    margin: 12px auto ;
+  }
 }

@@ -1,3 +1,3 @@
 - name: "Circles"
   description: "Particle based simulation for benchmarking spatial messaging performacne on ditributed simulators."
-  url: "/circles/" 
+  url: "/benchmarks/models/submit/circles" 

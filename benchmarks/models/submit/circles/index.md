@@ -21,6 +21,7 @@ $$F_{i} = \sum\limits_{i \neq j} F_{ij}^{rep}[d_{ij} - 2 < 0] + F_{ij}^{att}[d_{
 
 The parameter $$r$$ is the homogeneous radius of the circle agent. The square Iverson bracket notation determines a condition for both the repulsive force $$F_{ij}^{rep}$$ and attractive force $$F_{ij}^{att}$$ between the agent $$i$$ and a neighbouring agent $$j$$. When the condition evaluates to true it returns a value of $$1$$ otherwise it is $$0$$. The value $$d_{ij}$$ is the distance between agent positions $$x_{i}$$ and $$x_{j}$$ given by;
 
+
 $$ d_{ij} = \sqrt{ (x_{j} - x_{i})^2 } $$
 
 The repulsive and attractive forces as defined as follows;
@@ -44,3 +45,5 @@ $$\rho$$ The density of agents within the environment (this will dictate the fix
 A reference implementation is provided as part of the FLAME GPU SDK [https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model](https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model).
 
 To comply with the OpenAB proposal a second implementation is required. 
+=======
+The parameters $$k_{rep}$$ and $$k_{att}$$ are the repulsive and attractive damping terms respectively.

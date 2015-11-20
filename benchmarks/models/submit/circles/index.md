@@ -42,8 +42,7 @@ $$\rho$$ The density of agents within the environment (this will dictate the fix
 
 # Reference Implementation
 
-A reference implementation is provided as part of the FLAME GPU SDK [https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model](https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model).
+A reference implementation is provided as part of the [FLAME GPU SDK] (https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model).
 
 To comply with the OpenAB proposal a second implementation is required. 
-=======
-The parameters $$k_{rep}$$ and $$k_{att}$$ are the repulsive and attractive damping terms respectively.
+

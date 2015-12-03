@@ -32,13 +32,34 @@ $$ F_{ij}^{att} = \frac{k_{att}(d_{ij} - 2r)(x_{j} - x_{i})} {d_{ij}} $$
 
 The parameters $$k_{rep}$$ and $$k_{att}$$ are the repulsive and attractive damping terms respectively.
 
-
 # Initial Conditions
 
 The initial conditions of the circles model are a randomly positioned set of circle agents. The random distribution should be linear and the following parameters should be used to benchmark the model.
 
 $$W$$ The width and height of the environment in which agents are placed.
 $$\rho$$ The density of agents within the environment (this will dictate the fixed number of agents)
+
+# Model Parameters
+
+
+| Parameter | Description |
+| $$ k_{rep} $$ | The repulsive damping term. Increasing this value will encourage agents to separate.|
+| $$ k_{att} $$ | The attractive damping term. Increasing this term will encourage agents to attract. |
+| $$ r $$ | The interaction radius of the circle agents. Increasing this value will increase the communication between agents (assuming constant density) |
+| $$ \rho $$ | The density of agents within the environment. Increasing this value will increase the communication within the model. |
+| $$ W $$ | The width and height of the environment in which agents are placed. Increasing the environment size is equivalent to increasing the problem size $$ N $$ (i.e. the number of agents) given a fixed $$\rho$$. |
+{:.decoratedtable}
+
+
+The following suggested parameter configurations and benchmarks are suggested
+
+| Benchmark Name | Description | Parameter Values |
+| Strong Scaling Benchmark | Benchmark to test the increasing number of processors on a fixed model size. This benchmark tests the scalability of a particular simulator and is not suitable for evaluation between simulators.| $$k_{rep}=1.0$$, $$k_{att}=0.0, $$r=2.0$$, $$\rho$$ and $$W$$ can be user defined but must remain constant. |
+| Weak Scaling Benchmark | Benchmark to test the sclability of simulators given a fixed workload per processor. This benchmark tests the scalability of a particular simulator. The performance scalability characteristics can be used for evaluation between simulators. | $$k_{rep}=1.0$$, $$k_{att}=0.0, $$r=2.0$$, $$\rho$$ user defined but constant, $$W$$ varying creating increasing problem size. |
+| Simulator performacne scalability | Benchmark tests the simulator scalability with a fixed number of processors and an increasing problem size. The performance scalability characteristics can be used for evaluation between simulators. | $$k_{rep}=1.0$$, $$k_{att}=0.0, $$r=2.0$$, $$\rho$$ user defined but constant, $$W$$ varying creating increasing problem size. |
+| Communication scalability | This benchmark will test the simulators ability to handle increasing communication between agents given a fixed problem size and fixed number of processors | $$k_{rep}=1.0$$, $$k_{att}=0.0, $$r=2.0$$, $$\rho$$ varying creating increased communication, $$W$$ user defined but constant. |
+{:.decoratedtable}
+
 
 # Reference Implementation
 

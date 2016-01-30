@@ -15,4 +15,4 @@ The purpose of the OpenAB initiative is to;
 The outcome of the initiative is hoped to be;
 
 1. A set of reference benchmark models and published set of procedures to be used when exploring performance oriented simulation or model implementation on parallel and distributed systems.
-2. A published set of benchmark results for a wide range referecne models in a range of supported simulators to give insight to models designers about the suitability of simulators and computer architectures.
+2. A published set of benchmark results for a wide range of reference models in a range of supported simulators to give insight to model designers about the suitability of simulators and computer architectures.

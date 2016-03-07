@@ -17,7 +17,7 @@ $$x_{i(t+1)} = x_{i(t)} + F_{i}$$
 
 where $$F_{i}$$ denotes the force exerted on agent $$i$$ calculated as;
 
-$$F_{i} = \sum\limits_{i \neq j} F_{ij}^{rep}[d_{ij} - 2 < 0] + F_{ij}^{att}[d_{ij} - 2r > 0]$$
+$$F_{i} = \sum\limits_{i \neq j} F_{ij}^{rep}[d_{ij} - 2r <= 0] + F_{ij}^{att}[d_{ij} - 2r > 0]$$
 
 The parameter $$r$$ is the homogeneous radius of the circle agent. The square Iverson bracket notation determines a condition for both the repulsive force $$F_{ij}^{rep}$$ and attractive force $$F_{ij}^{att}$$ between the agent $$i$$ and a neighbouring agent $$j$$. When the condition evaluates to true it returns a value of $$1$$ otherwise it is $$0$$. The value $$d_{ij}$$ is the distance between agent positions $$x_{i}$$ and $$x_{j}$$ given by;
 

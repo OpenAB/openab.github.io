@@ -40,7 +40,7 @@ $$W$$ The width and height of the environment in which agents are placed.
 $$\rho$$ The density of agents within the environment.
 $$E_{dim}$$ The dimensionality of the environment (in most cases this will be $$ 2 $$ or $$ 3 $$).
 
-$$ A_{pop} ** The constant agent population size is then calculated according to the formula;
+$$ A_{pop} $$ The constant agent population size is then calculated according to the formula;
 
 $$ A_{pop} = \left\lfloor{W^{E_{dim}} p}\right\rfloor$$ 
 

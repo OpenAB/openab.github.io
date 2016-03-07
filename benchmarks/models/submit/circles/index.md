@@ -37,7 +37,12 @@ The parameters $$k_{rep}$$ and $$k_{att}$$ are the repulsive and attractive damp
 The initial conditions of the circles model are a randomly positioned set of circle agents. The random distribution should be linear and the following parameters should be used to benchmark the model.
 
 $$W$$ The width and height of the environment in which agents are placed.
-$$\rho$$ The density of agents within the environment (this will dictate the fixed number of agents)
+$$\rho$$ The density of agents within the environment.
+$$E_{dim}$$ The dimensionality of the environment (in most cases this will be $$ 2 $$ or $$ 3 $$).
+
+$$ A_{pop} ** The constant agent population size is then calculated according to the formula;
+
+$$ A_{pop} = \left\lfloor{W^{E_{dim}} p}\right\rfloor$$ 
 
 # Model Parameters
 

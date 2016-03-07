@@ -42,7 +42,7 @@ $$E_{dim}$$ The dimensionality of the environment (in most cases this will be $$
 
 $$ A_{pop} ** The constant agent population size is then calculated according to the formula;
 
-$$ A_{pop} = \left\lfloor{W^{E_{dim}} p}\right\rfloor$$ 
+$$ A_{pop} = \left\lfloor{W^{E_{dim}} \rho}\right\rfloor$$ 
 
 # Model Parameters
 

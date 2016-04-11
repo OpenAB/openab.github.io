@@ -457,6 +457,23 @@ Tables
 	font-weight:normal;
 	color:#000000;
 }
+.decoratedtable th.text-left ,
+.decoratedtable td.text-left {
+  text-align left;
+}
+.decoratedtable th.text-center ,
+.decoratedtable td.text-center {
+  text-align center;
+}
+.decoratedtable th.text-right ,
+.decoratedtable td.text-right {
+  text-align right;
+}
+.decoratedtable th.text-justify ,
+.decoratedtable td.text-justify {
+  text-align justify;
+}
+
 .decoratedtable tr:last-child th ,
 .decoratedtable tr:last-child td {
 	border-width:0px 1px 0px 0px;

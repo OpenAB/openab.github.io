@@ -34,9 +34,9 @@ There are currently no accepted benchmark models
 	</tr>
 	{% for model in site.data.submit %}
 	<tr>
-		<td>{{model.name}}</td>
+		<td class="text-center"><a href="{{model.url}}">{{model.name}}</a></td>
 		<td>{{model.description}}</td>
-		<td><a href="{{model.url}}">{{model.url}}</td>
+		<td class="text-center"><a href="{{model.url}}">Specification</td>
 	</tr>
 	{% endfor %}
 </table>

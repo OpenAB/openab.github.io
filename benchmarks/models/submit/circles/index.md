@@ -5,7 +5,7 @@ layout: default
 
 # Circles Model Overview
 
-The circles benchmark model is a benchmark model originating from FLAME and FLAME GPU. It consists of a number of points which exert a repulsive and potentially attractive force over a limited range. Over a number of iterations the model will exhibit a force resolution which will ultimately result in a stable state. The model has origins in a number of biological systems and is analogous to that of cellular interactions of simple swarm systems.
+The circles benchmark model is a benchmark model originating from FLAME and FLAME GPU. It consists of a number of points which exert a repulsive and potentially attractive force over a limited range $$2r$$. Over a number of iterations the model will exhibit a force resolution which will ultimately result in a stable state. The model has origins in a number of biological systems and is analogous to that of cellular interactions of simple swarm systems.
 
 The model has been used for extensive benchmarking of the FLAME and FLAME GPU frameworks and is excellent for testing message acceleration structures for spatially distributed models.
 
@@ -17,7 +17,7 @@ $$x_{i(t+1)} = x_{i(t)} + F_{i}$$
 
 where $$F_{i}$$ denotes the force exerted on agent $$i$$ calculated as;
 
-$$F_{i} = \sum\limits_{i \neq j} F_{ij}^{rep}[d_{ij} - 2r <= 0] + F_{ij}^{att}[d_{ij} - 2r > 0]$$
+$$F_{i} = \sum\limits_{i \neq j} F_{ij}^{rep}[d_{ij} <= r] + F_{ij}^{att}[r < d_{ij} <= 2r]$$
 
 The parameter $$r$$ is the homogeneous radius of the circle agent. The square Iverson bracket notation determines a condition for both the repulsive force $$F_{ij}^{rep}$$ and attractive force $$F_{ij}^{att}$$ between the agent $$i$$ and a neighbouring agent $$j$$. When the condition evaluates to true it returns a value of $$1$$ otherwise it is $$0$$. The value $$d_{ij}$$ is the distance between agent positions $$x_{i}$$ and $$x_{j}$$ given by;
 

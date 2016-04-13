@@ -11,7 +11,7 @@ The model has been used for extensive benchmarking of the FLAME and FLAME GPU fr
 
 # Model Description
 
-The position $$x$$ of a circle agent $$i$$ at a discrete time step $$t - 1$$ is given by;
+The position $$x$$ of a circle agent $$i$$ at a discrete time step $$t + 1$$ is given by;
 
 $$x_{i(t+1)} = x_{i(t)} + F_{i}$$
 

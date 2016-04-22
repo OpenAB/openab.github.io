@@ -4,7 +4,7 @@
   img: "http://www.openab.org/assets/images/FLAMEGPU.png" 
 - name: "Repast HPC"
   description: "Repast for High Performance Computing (Repast HPC) 2.1, released on 8 May 2015, is a next generation agent-based modeling system intended for large-scale distributed computing platforms. It implements the core Repast Simphony concepts (e.g. contexts and projections), modifying them to work in a parallel distributed environment. Repast HPC is written in cross-platform C++. It can be used on workstations, clusters, and supercomputers running Apple Mac OS X, Linux, or Unix. Portable models can be written in either standard or Logo-style C++. Repast HPC has been successfully tested for scalability on Argonne National Laboratory's Blue Gene P. "
-  url: "http://repast.sourceforge.net"
+  url: "repast.sourceforge.net"
   img: "http://www.openab.org/assets/images/repast.png"   
 - name: "D-MASON"
   description: "DMASON 3.0.2 released on September 2015, is a parallel version of the MASON, a Java library for writing and running Agent-Based Simulations. DMASON at beginning was designed to harness heterogeneous system, currently faces also the power of large-scale distributed computing systems and cluster environments. DMASON uses the Master Worker paradigm for work partitioning and Publish and Subscribe paradigm for the communication among the nodes, it provides both centralized and decentralized communication mechanisms.DMASON consists in three main layers: Distributed Simulation (that includes MASON), Communication (JMS and MPI), Visualization."

@@ -32,6 +32,8 @@ $$ F_{ij}^{att} = \frac{k_{att}(d_{ij} - 2r)(x_{j} - x_{i})} {d_{ij}} $$
 
 The parameters $$k_{rep}$$ and $$k_{att}$$ are the repulsive and attractive damping terms respectively.
 
+After the location has been calculated, it must be clamped within the environmental bounds, as specified by the parametered $$W$$ (see below).
+
 # Initial Conditions
 
 The initial conditions of the circles model are a randomly positioned set of circle agents. The random distribution should be linear and the following parameters should be used to benchmark the model.
@@ -44,13 +46,17 @@ $$ A_{pop} $$ The constant agent population size is then calculated according to
 
 $$ A_{pop} = \left\lfloor{W^{E_{dim}} \rho}\right\rfloor$$ 
 
+# Validation
+
+There are several checks that can be carried out to ensure that the benchmark has been implemented correctly. Most significantly it should be confirmed that agent locations remain within the environmental bounds. The absence of this clamping under certain model parameters allows agent density to decrease, which artificially benefits performance. During execution, the majority of particles will move in a smooth path, whereby a greater difference between the forces will cause greater particle speeds. When $$F_{att} >= F_{rep}$$, particles will cluster to a small number of locations, and overlap tightly, with many particles aligning in multiples of $r$ distance from the environment boundaries. In contrast, scenarios where $$F_{rep} > 2F_{att}$$, particles will primarily separate with minimal overlap, moving significantly slower. It is intended that the benchmark model is able to reach a steady state over a number of iterations, however in some cases high-magnitude forces $$F_{att}$$ and $$F_{rep}$$ may instead cause the agents to vibrate. 
+
 # Model Parameters
 
 
 | Parameter | Description |
 | $$ k_{rep} $$ | The repulsive damping term. Increasing this value will encourage agents to separate.|
 | $$ k_{att} $$ | The attractive damping term. Increasing this term will encourage agents to attract. |
-| $$ r $$ | The interaction radius of the circle agents. Increasing this value will increase the communication between agents (assuming constant density) |
+| $$ r $$ | The interaction radius of the circle agents. Increasing this value will increase the communication between agents (assuming uniform density) |
 | $$ \rho $$ | The density of agents within the environment. Increasing this value will increase the communication within the model. |
 | $$ W $$ | The width and height of the environment in which agents are placed. Increasing the environment size is equivalent to increasing the problem size $$ N $$ (i.e. the number of agents) given a fixed $$\rho$$. |
 {:.decoratedtable}
@@ -59,16 +65,16 @@ $$ A_{pop} = \left\lfloor{W^{E_{dim}} \rho}\right\rfloor$$
 The following suggested parameter configurations and benchmarks are suggested
 
 | Benchmark Name | Description | Parameter Values |
-| Strong Scaling Benchmark | Benchmark to test the increasing number of processors on a fixed model size. This benchmark tests the scalability of a particular simulator and is not suitable for evaluation between simulators.| $$k_{rep}=1.0$$, $$k_{att}=0.0$$, $$r=2.0$$, $$\rho$$ and $$W$$ can be user defined but must remain constant. |
-| Weak Scaling Benchmark | Benchmark to test the sclability of simulators given a fixed workload per processor. This benchmark tests the scalability of a particular simulator. The performance scalability characteristics can be used for evaluation between simulators. | $$k_{rep}=1.0$$, $$k_{att}=0.0$$, $$r=2.0$$, $$\rho$$ user defined but constant, $$W$$ varying creating increasing problem size. |
-| Simulator performacne scalability | Benchmark tests the simulator scalability with a fixed number of processors and an increasing problem size. The performance scalability characteristics can be used for evaluation between simulators. | $$k_{rep}=1.0$$, $$k_{att}=0.0$$, $$r=2.0$$, $$\rho$$ user defined but constant, $$W$$ varying creating increasing problem size. |
-| Communication scalability | This benchmark will test the simulators ability to handle increasing communication between agents given a fixed problem size and fixed number of processors | $$k_{rep}=1.0$$, $$k_{att}=0.0$$, $$r=2.0$$, $$\rho$$ varying creating increased communication, $$W$$ user defined but constant. |
+| Problem scale | This benchmark will test the simulators ability to handle greater problem size. | $$k_{rep}=1\times10^{-5}$$, $$k_{att}=1\times10^{-5}$$, $$\rho$$ and $$r$$ user defined but constant. Varying $$W$$ will increase the number of agents within the environment, and hence the problem scale.  |
+| Neighbourhood scale/Communication scale | This benchmark will test the simulators ability to handle increasing communication between agents given a fixed problem size and fixed number of processors, by increasing the size of each agents neighbourhood. | $$k_{rep}=1\times10^{-5}$$, $$k_{att}=1\times10^{-5}$$, $$\rho=0.01$$, $$r$$ varying creating increased communication, $$W$$ user defined but constant. |
+| Entropy/Agent Activity | This benchmark will test the simulators ability to handle increasing motion of agents given a fixed problem size and number of processors. Most implementations will have stable performance throughout this benchmark. | $$r=5.0$$, $$\rho$$ and $$W$$ can be user defined but constant. Varying $$k_{rep}$$ and $$k_{att}$$ such that the difference between the two parameters increases, will increase agent speeds. |
+| Nodes Scaling Benchmark | Benchmark to test the increasing number of processors on a fixed model size. This benchmark tests the scalability of a particular simulator and is not suitable for evaluation between simulators.| $$k_{rep}=1.0$$, $$k_{att}=0.0$$, $$r=2.0$$, $$\rho$$ and $$W$$ can be user defined but must remain constant. |
 {:.decoratedtable}
 
 
 # Reference Implementation
 
-A reference implementation is provided as part of the [FLAME GPU SDK](https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model).
+3D reference implementations in: FLAME GPU, MASON and Repast Simphony are available [here](https://github.com/Robadob/circles-benchmark), alongside a spreadsheet of results.
 
-To comply with the OpenAB proposal a second implementation is required. 
+A 2D reference implementation is provided as part of the [FLAME GPU SDK](https://github.com/FLAMEGPU/FLAMEGPU/tree/master/examples/CirclesBruteForce_float/src/model).
 

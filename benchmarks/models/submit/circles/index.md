@@ -13,11 +13,11 @@ The model has been used for extensive benchmarking of the FLAME and FLAME GPU fr
 
 The position $$x$$ of a circle agent $$i$$ at a discrete time step $$t + 1$$ is given by;
 
-$$x_{i(t+1)} = x_{i(t)} + F_{i}$$
+$$\overrightarrow{x_{i(t+1)}} = \overrightarrow{x_{i(t)}} + \overrightarrow{F_{i}}$$
 
 where $$F_{i}$$ denotes the force exerted on agent $$i$$ calculated as;
 
-$$F_{i} = \sum\limits_{i \neq j} F_{ij}^{rep}[d_{ij} < r] + F_{ij}^{att}[r <= d_{ij} < 2r]$$
+$$\overrightarrow{F_{i}} = \sum\limits_{i \neq j} \overrightarrow{F_{ij}^{rep}}[\lVert\overrightarrow{x_{i}x_{j}}\rVert < r] + \overrightarrow{F_{ij}^{att}}[r <= \lVert\overrightarrow{x_{i}x_{j}}\rVert < 2r]$$
 
 The parameter $$r$$ is the homogeneous radius of the circle agent. The square Iverson bracket notation determines a condition for both the repulsive force $$F_{ij}^{rep}$$ and attractive force $$F_{ij}^{att}$$ between the agent $$i$$ and a neighbouring agent $$j$$. When the condition evaluates to true it returns a value of $$1$$ otherwise it is $$0$$. The value $$d_{ij}$$ is the distance between agent positions $$x_{i}$$ and $$x_{j}$$ given by;
 
@@ -26,13 +26,13 @@ $$ d_{ij} = \sqrt{ (x_{j} - x_{i})^2 } $$
 
 The repulsive and attractive forces as defined as follows;
 
-$$ F_{ij}^{rep} = \frac{k_{rep}(d_{ij} - 2r)(x_{j} - x_{i})} {d_{ij}} $$
+$$ \overrightarrow{F_{ij}^{rep}} = k_{rep}(\lVert\overrightarrow{x_{i}x_{j}}\rVert)\frac{\overrightarrow{x_{i}x_{j}}}{\lVert\overrightarrow{x_{i}x_{j}}\rVert} $$
 
-$$ F_{ij}^{att} = \frac{k_{att}(d_{ij} - 2r)(x_{j} - x_{i})} {d_{ij}} $$
+$$ \overrightarrow{F_{ij}^{att}} = k_{att}(2r-\lVert\overrightarrow{x_{j}x_{i}}\rVert)\frac{\overrightarrow{x_{j}x_{i}}}{\lVert\overrightarrow{x_{j}x_{i}}\rVert} $$
 
 The parameters $$k_{rep}$$ and $$k_{att}$$ are the repulsive and attractive damping terms respectively.
 
-After the location has been calculated, it must be clamped within the environmental bounds, as specified by the parametered $$W$$ (see below).
+After the location has been calculated, it must be clamped within the environmental bounds $$0<=x<=W-1$$, as specified by the parametered $$W$$ (see below).
 
 # Initial Conditions
 
@@ -48,7 +48,9 @@ $$ A_{pop} = \left\lfloor{W^{E_{dim}} \rho}\right\rfloor$$
 
 # Validation
 
-There are several checks that can be carried out to ensure that the benchmark has been implemented correctly. Most significantly it should be confirmed that agent locations remain within the environmental bounds. The absence of this clamping under certain model parameters allows agent density to decrease, which artificially benefits performance. During execution, the majority of particles will move in a smooth path, whereby a greater difference between the forces will cause greater particle speeds. When $$F_{att} >= F_{rep}$$, particles will cluster to a small number of locations, and overlap tightly, with many particles aligning in multiples of $r$ distance from the environment boundaries. In contrast, scenarios where $$F_{rep} > 2F_{att}$$, particles will primarily separate with minimal overlap, moving significantly slower. It is intended that the benchmark model is able to reach a steady state over a number of iterations, however in some cases high-magnitude forces $$F_{att}$$ and $$F_{rep}$$ may instead cause the agents to vibrate. 
+Precise validation can be carried out by seeding two independent implementations with the same initial agent locations. With appropriate model paramters it is possible to export agent locations after a single iteration to confirm they remain in agreement to several decimal places.
+
+Due to the severe force fall-off when agents cross the boundary of $$r$$ units seperation, minor floating point differences can quickly cause models to diverge, which then snowballs affecting more agents.
 
 # Model Parameters
 
@@ -65,8 +67,8 @@ There are several checks that can be carried out to ensure that the benchmark ha
 The following suggested parameter configurations and benchmarks are suggested
 
 | Benchmark Name | Description | Parameter Values |
-| Problem scale | This benchmark will test the simulators ability to handle greater problem size. | $$k_{rep}=1\times10^{-5}$$, $$k_{att}=1\times10^{-5}$$, $$\rho$$ and $$r$$ user defined but constant. Varying $$W$$ will increase the number of agents within the environment, and hence the problem scale.  |
-| Neighbourhood scale/Communication scale | This benchmark will test the simulators ability to handle increasing communication between agents given a fixed problem size and fixed number of processors, by increasing the size of each agents neighbourhood. | $$k_{rep}=1\times10^{-5}$$, $$k_{att}=1\times10^{-5}$$, $$\rho=0.01$$, $$r$$ varying creating increased communication, $$W$$ user defined but constant. |
+| Problem scale | This benchmark will test the simulators ability to handle greater problem size. | $$k_{rep}=1\times10^{-3}$$, $$k_{att}=1\times10^{-3}$$, $$\rho$$ and $$r$$ user defined but constant. Varying $$W$$ will increase the number of agents within the environment, and hence the problem scale.  |
+| Neighbourhood scale/Communication scale | This benchmark will test the simulators ability to handle increasing communication between agents given a fixed problem size and fixed number of processors, by increasing the size of each agents neighbourhood. | $$k_{rep}=1\times10^{-3}$$, $$k_{att}=1\times10^{-3}$$, $$\rho=0.01$$, $$r$$ varying creating increased communication, $$W$$ user defined but constant. |
 | Entropy/Agent Activity | This benchmark will test the simulators ability to handle increasing motion of agents given a fixed problem size and number of processors. Most implementations will have stable performance throughout this benchmark. | $$r=5.0$$, $$\rho$$ and $$W$$ can be user defined but constant. Varying $$k_{rep}$$ and $$k_{att}$$ such that the difference between the two parameters increases, will increase agent speeds. |
 | Nodes Scaling Benchmark | Benchmark to test the increasing number of processors on a fixed model size. This benchmark tests the scalability of a particular simulator and is not suitable for evaluation between simulators.| $$k_{rep}=1.0$$, $$k_{att}=0.0$$, $$r=2.0$$, $$\rho$$ and $$W$$ can be user defined but must remain constant. |
 {:.decoratedtable}
